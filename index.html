@@ -2,19 +2,45 @@
 <html lang="en">
     <head>
         <title>Github Hub</title>
+        <link rel="stylesheet" href="css/site.css" />
     </head>
     <body>
-        <div>
-            <h1><img src="logo.gif"></h1>
-            <h1>Github Hub</h1>
-        </div>
-       <div>
-           <p>This is a site to search Github for interesting projects</p>
+        <header>
+            <div><img src="logo.gif"></div>
+            <div>This is a site to search Github for interesting projects.</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </header>
+       <section>
            <p>In this sample site, we'll show a list of <a href="https://github.com">Github</a> projects and the data about
                those projects.</p>
-       </div>
-        <div>
+           <!--POST method sends the data as the body of the request instead of attaching
+             to the query string (some times of data arent able to be part of query string-->
+           <form action="http://wilder.azurewebsites.net/echo" method="POST">
+               <!--the label tag and "for" ties each attribute to the identified id of the specified tag-->
+               <label for="searchPhrase">Search Phrase:</label>
+               <input name="searchPhrase" id="searchPhrase"/><br/>
+               <input type="checkbox" name="useStars" checked="true" id="useStars"/>
+               <label for="useStars"> Use Stars?</label><br/>
+               <label for="langChoice">Language:</label>
+               <select name="langChoice" id="langChoice">
+                   <option selected>All</option>
+                   <option>JavaScript</option>
+                   <option>C#</option>
+                   <option>Ruby</option>
+                   <option>Java</option>
+               </select>
+               <br/>
+               <input type="submit" value="search"/>
+           </form>
+       </section>
+        <footer>
             &copy; 2017 Han Sern Yen
-        </div>
+        </footer>
     </body>
 </html>
