@@ -1,3 +1,15 @@
+/*
+ The box model:
+    - margin > border > padding > content
+    - height and width are for the content
+    - actual height and width are for the margins
+    - if you need exactly 200 wide, you have to make sure
+      your width + padding + border + margin = 200
+
+ i)  classes use "."
+ ii) id uses "#"
+*/
+
 header, footer {
     background-color: lightgray;
     border: solid 1px black;
@@ -12,5 +24,92 @@ footer {
 body {
     font-family: Segoe UI, Arial, Helvetica, sans-serif;
     font-size: 14px;
+    background-color: darkgreen;
+}
+
+a {
+    color: green;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+header nav {
+    float: right;
+    margin-right: 5px;
+}
+
+header nav li {
+    display: inline;
+    font-size: 12px;
+}
+
+/*selector for classes start with a period and the name of the class*/
+.bordered-image {
+    border: solid 1px #444;
+    border-radius: 2px;
+}
+
+/*ID Selector from the "section" tag*/
+#main {
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    color: #202020;
+    /*margin separates the main with footer and header by adding some space*/
+    margin: 20px 0px;
+    /* padding adds some spaces between the border and the texts inside the container */
+    padding: 5px;
+}
+
+/*
+Inline-block is where you put the blocks inline, for this case
+the results <div> and simple form are two blocks
+*/
+
+#results {
+    padding: 2px;
+    width: 600px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.simple-form {
+    padding: 2px;
+    width: 300px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.simple-form label {
+    font-weight: bold;
+}
+
+/*rules are matched by the specificity*/
+.simple-form input[type=text] {
+    margin-left: 5px;
+    margin-bottom: 10px;
+    width: 150px;
+}
+
+.simple-form select {
+    margin-left: 32px;
+    width: 155px;
+}
+
+.simple-form input[type=submit] {
+    background-color: green;
+    color: white;
+    border-radius: 15px;
+    padding: 3px;
+    margin-top: 5px;
+}
+
+.container {
+    width: 989px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 5px;
 }
 
