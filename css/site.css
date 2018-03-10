@@ -113,3 +113,12 @@ the results <div> and simple form are two blocks
     padding: 5px;
 }
 
+.results {
+    margin: 5px;
+    border: 1px solid #888;
+}
+
+.results .title {
+    font-weight: bold;
+}
+
