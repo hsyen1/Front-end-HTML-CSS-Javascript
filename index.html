@@ -24,7 +24,7 @@
                     those projects.</p>
                 <!--POST method sends the data as the body of the request instead of attaching
                   to the query string (some times of data arent able to be part of query string-->
-                <form action="http://wilder.azurewebsites.net/echo" method="POST" class="bordered-image simple-form">
+                <form action="http://wilder.azurewebsites.net/echo" method="POST" class="bordered-image simple-form" id="gitHubSearchForm">
                     <!--the label tag and "for" ties each attribute to the identified id of the specified tag-->
                     <label for="searchPhrase">Search Phrase:</label>
                     <input type="text" name="searchPhrase" id="searchPhrase"/><br/>
@@ -39,16 +39,19 @@
                     <br/>
                     <input type="checkbox" name="useStars" checked="true" id="useStars"/>
                     <label for="useStars"> Use Stars?</label><br/>
-                    <input type="submit" value="search"/>
+                    <input type="submit" value="Search"/>
                 </form>
                 <div id="results" class="bordered-image">
-                    This is where results will live... eventually.
+                    <button id="toggleButton">Hide</button>
+                    <div id="resultList">This is where results will live... eventually.</div>
                 </div>
             </section>
             <footer>
                 &copy; 2017 Han Sern Yen
             </footer>
         </div>
+        <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
     </body>
 </html>
 
